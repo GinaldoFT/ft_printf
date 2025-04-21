@@ -1,26 +1,16 @@
 NAME = libftprintf.a
-
-CC = cc
 CFLAGS = -Wall -Wextra -Werror
-INCLUDES = -I$(HEADER_DIR)
+INCLUDES = -I include
 
-HEADER_DIR = include
-SRCS_DIR = src/
+SRCS = ./srcs/ft_printf.c ./srcs/ft_cnumber.c ./srcs/ft_putstr_len.c
 
-SRCS_FILES = \
-	ft_printf.c \
-	ft_cnumber.c \
-	ft_putstr_len.c
-
-OBJS = $(addprefix $(SRCS_DIR), $(SRCS_FILES:.c=.o))
+OBJS = ft_printf.o ft_cnumber.o ft_putstr_len.o
 
 all: $(NAME)
 
-$(NAME): $(OBJS)
-	ar rcs $(NAME) $(OBJS)
-
-%.o: %.c
-	$(CC) $(CFLAGS) $(INCLUDES) -c $< -o $@
+$(NAME):
+	cc $(CFLAGS) $(INCLUDES) -c $(SRCS)
+	ar rc $(NAME) $(OBJS)
 
 clean:
 	rm -f $(OBJS)
