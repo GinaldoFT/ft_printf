@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="https://raw.githubusercontent.com/GinaldoFT/GinaldoFT/main/42covers/cover-ft_printf.png" alt="libft cover" />
+</p>
+
 # 🖨️ ft_printf
 
 A custom implementation of the standard `printf` function in C. This project replicates the behavior of `printf`, including format parsing and handling various data types — all without using the standard C library.
